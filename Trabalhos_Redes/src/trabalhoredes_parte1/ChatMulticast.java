@@ -76,8 +76,8 @@ public class ChatMulticast {
             JSONObject jsonWelcome = new JSONObject();
             jsonWelcome.put("username", nomeUsuario);
             jsonWelcome.put("message", welcomeMessege);
-            jsonWelcome.put("time", new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
-            jsonWelcome.put("date", new SimpleDateFormat("HH:mm:ss").format(new Date()));
+            jsonWelcome.put("date", new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
+            jsonWelcome.put("time", new SimpleDateFormat("HH:mm:ss").format(new Date()));
             
             byte[] welcomeBytes = jsonWelcome.toString().getBytes();
             DatagramPacket welcomePacket = new DatagramPacket(welcomeBytes, welcomeBytes.length, group, PORT);
@@ -86,7 +86,11 @@ public class ChatMulticast {
 
             // Thread responsável por receber mensagens de outros usuários via multicast
             Thread receiver = new Thread(() -> {
-                byte[] buffer = new byte[1024]; // Buffer para armazenar os dados recebidos
+                // Buffer para armazenar os dados recebidos -> Armazena cerca de 680 caracteres para a lingua portuguesa
+                // Parte do buffer já é consumido pelo arquivo JSON, portanto a mensagem pode armazenar menos de 680 caracteres
+                // ASCII - 1 byte - 1024 bytes = 1024 caracteres simples(a-z, 0-9, pontuação)
+                // Língua portuguesa - ~1.5 bytes = ~680 bytes = 680 caracteres(a-z + ç-ã, 0-9, pontuação)
+                byte[] buffer = new byte[1024];
                 while (true) {
                     try {
                         // Cria pacote de recepção
