@@ -1,9 +1,9 @@
 # AVALIAÇÃO 3 (Parte 1/3)
-# CURSO: CIÊNCIA DA COMPUTAÇÃO 
-# FASE: 3ª 
-# ANO/SEMESTRE: 2025/1
-# DISCIPLINA: REDES DE COMPUTADORES I (RCA)
-# DATA: 07/04/2024
+CURSO: CIÊNCIA DA COMPUTAÇÃO 
+FASE: 3ª 
+ANO/SEMESTRE: 2025/1
+DISCIPLINA: REDES DE COMPUTADORES I (RCA)
+DATA: 07/04/2024 #
 
 
 Com base nos conceitos apresentados em aula e utilizando a linguagem de programação de
