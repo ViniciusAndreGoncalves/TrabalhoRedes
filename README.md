@@ -167,15 +167,5 @@ Resposta:
 
 ---
 
-## 👨‍🏫 Avaliação
-
-- Pode ser feito em **duplas**.
-- Linguagem de programação: **livre escolha**.
-- Nota **individual**, com apresentação prática em sala.
-  - Explicação do **código-fonte**.
-  - Execução e **demonstração funcional**.
-
----
-
 📍 **Instituto Federal de Santa Catarina – Câmpus Lages**  
 Rua: Heitor Vila Lobos, 225 – São Francisco – Lages / SC – CEP: 88506-400
