@@ -1,6 +1,0 @@
-{
-  "date": "{{date}}",
-  "time": "{{time}}",
-  "username": "{{username}}",
-  "message": "{{message}}"
-}
