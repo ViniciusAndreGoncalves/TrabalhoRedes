@@ -131,13 +131,12 @@ public class ClienteArquivos {
                         } else {
                             byte[] dadosArq = Base64.getDecoder().decode(conteudo);
 
-                                                        
-                            Files.createDirectories(Paths.get(caminhoSalvar)); // Cria a pasta se não existir
+                            // Salva o arquivo no caminho final
                             Path caminhoFinal = Paths.get(caminhoSalvar, nomeRemoto);
                             Files.write(caminhoFinal, dadosArq);
 
                             // Confirma onde foi salvo
-                            JOptionPane.showMessageDialog(null, "Arquivo salvo em: " + caminhoFinal.toString());
+                            JOptionPane.showMessageDialog(null, "Arquivo salvo em: " + caminhoSalvar.toString());
                         }
                         break;
                 }

@@ -38,8 +38,7 @@ public class ChatMulticast {
     private static final int PORT = 8080;
 
     public static void main(String[] args) {
-        boolean conectado = false;
-        
+                
         try {
             // Tenta carregar o arquivo externo template.json como base de configuração inicial
             JSONObject template = carregarJson("src/trabalhoredes_parte1/template.json");
