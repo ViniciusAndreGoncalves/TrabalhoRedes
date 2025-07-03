@@ -1,33 +1,30 @@
-package trabalhoredes_parte3;
+package trabalhoredes3;
 
-import java.net.*; // Para UDP: DatagramSocket, DatagramPacket
-import java.io.*; // Para FileReader e exceções
-import java.nio.charset.StandardCharsets; // Para usar UTF-8
-import java.util.*; // Para Map
-import org.json.JSONObject; // Manipulação de JSON
+import java.net.*; 
+import java.io.*; 
+import java.nio.charset.StandardCharsets;
+import java.util.*; 
+import org.json.JSONObject; 
 import org.json.JSONArray;
 
-/**
- * Servidor UDP que escuta comandos JSON de um cliente e responde com base no
- * estado de sensores e atuadores carregados de um arquivo.
- */
 public class ServerUDP {
-    // Mapa que armazena o estado de cada dispositivo (sensor/atuador)
+    
     private static Map<String, Object> dispositivos = new HashMap<>();
 
     public static void main(String[] args) {
         try {
-            // Carrega os dados iniciais do arquivo JSON
-            carregarConfiguracao("src/trabalhoredes_parte3/dispositivos.json");
+            
+            carregarConfiguracao("src/trabalhoredes3/dispositivos.json");
+
 
             int porta = 9876;
             DatagramSocket socket = new DatagramSocket(porta);
-            System.out.println("Servidor UDP iniciado na porta " + porta + "...");
+            System.out.println("Servidor UDP iniciado no localhost 127.0.0.1 e porta " + porta + "...");
 
             byte[] bufferRecebimento = new byte[1024];
 
             while (true) {
-                // Recebe o pacote do cliente
+                
                 DatagramPacket pacoteRecebido = new DatagramPacket(bufferRecebimento, bufferRecebimento.length);
                 socket.receive(pacoteRecebido);
 
@@ -79,7 +76,7 @@ public class ServerUDP {
                         resposta.put("cmd", "set_resp");
                         resposta.put("locate", local);
 
-                        if (local.startsWith("atuator_")) {
+                        if (local.startsWith("atuador")) {
                             if (dispositivos.containsKey(local)) {
                                 dispositivos.put(local, valor);
                                 resposta.put("value", valor);
@@ -97,7 +94,6 @@ public class ServerUDP {
                         break;
                 }
 
-                // Envia a resposta de volta ao cliente
                 byte[] dadosEnvio = resposta.toString().getBytes(StandardCharsets.UTF_8);
                 DatagramPacket pacoteEnvio = new DatagramPacket(
                         dadosEnvio, dadosEnvio.length,
@@ -111,9 +107,6 @@ public class ServerUDP {
         }
     }
 
-    /**
-     * Carrega os dispositivos e seus valores iniciais de um arquivo JSON.
-     */
     private static void carregarConfiguracao(String caminho) throws Exception {
         FileReader reader = new FileReader(caminho, StandardCharsets.UTF_8);
         StringBuilder conteudo = new StringBuilder();
