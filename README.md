@@ -5,7 +5,7 @@
 **Fase:** 3ª  
 **Ano/Semestre:** 2025/1  
 **Disciplina:** Redes de Computadores I (RCA)  
-**Data:** 07/04/2024  
+**Data:** 07/04/2025  
 
 ## 🧩 Especificação
 
