@@ -35,7 +35,7 @@ Desenvolva um programa de bate-papo (chat), utilizando a linguagem de programaç
 
 # Avaliação 3 – Redes de Computadores I (Parte 2/3)
 
-**Data:** 07/05/2024  
+**Data:** 07/05/2025  
 
 ## 🧩 Especificação
 
@@ -99,7 +99,7 @@ Servidor responde com arquivo:
 
 # Avaliação 3 – Redes de Computadores I (Parte 3/3)
 
-**Data:** 02/05/2024  
+**Data:** 02/05/2025  
 
 ## 📘 Contexto
 
